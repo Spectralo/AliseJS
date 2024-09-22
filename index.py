@@ -20,6 +20,7 @@ else:
     print("Schoolid found !")
     print("Your schoolid is : "+schoolid)
 
-session = requests.Session()
-r = session.get('https://webparent.paiementdp.com/aliAuthentification.php?site='+schoolid+'&token='+token)
-print(session.cookies.get_dict())
+if token != "" and schoolid != "":
+    session = requests.Session()
+    r = session.get('https://webparent.paiementdp.com/aliAuthentification.php?site='+schoolid+'&token='+token)
+    print(session.cookies.get_dict())
